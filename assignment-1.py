@@ -4,8 +4,27 @@ import random
 import pandas as pd
 import matplotlib.pyplot as plt
 print("\033c")
+
+# ****************************************************************************************************************************************************
+
+# ************* Data Cleaning *************
+
+# 1. Name Column some names are in lower case and some are in upper case but most of the names are in sentence case
+# so i changed all the names to sentence case
+
+# 2. In HSSC-1 & HSSC-2 some student write their total inter marks instead of their marks in HSSC-1 & HSSC-2
+# so i delete those rows
+
+# 3. Birth Month column some students write their birth month in number but mostly write their birth month in words
+# so i changed all the birth month two words.
+
+# 4. In favourite color column some students write 2 favourite color instead of 1 so i chaged their favourite color to their first favourite color.
+
+# 5. In weight coloumn some students write their weight in kg but most of them wrote in number only so i changed all the weight in number
+# ****************************************************************************************************************************************************
+
 dataSet = pd.read_csv(
-    r'/Users/muhammadali/Documents/University/Introduction to Data Science/Lab/the-hello-dataset-fa22.csv')
+    r'the-hello-dataset-fa22.csv')
 
 
 # 1. Print the list of all students whose  first name starts with letter the 'H'.
@@ -80,7 +99,7 @@ marks = sb.heatmap(dataSet[["HSSC-1", "HSSC-2"]].corr(),
 plt.show()
 
 # **************************************************************************************************
-# What other things (insights) you can get from the dataset?
+# 10. What other things (insights) you can get from the dataset?
 # We can also see that the students who have more GPA have more weight or not
 # becuase as we know if a if we have to study we have to sit more and if we sit more we have more weight.
 # It's a subjective thing but we can see what data says about this.
